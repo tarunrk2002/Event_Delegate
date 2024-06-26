@@ -11,11 +11,15 @@ namespace events_delegates
     {
         static void Main(string[] args)
         {
-            vid vidd = new vid() { Title = "hi" };
-            vid vidd2 = new vid() { Title = "hello" };
+            Video video = new Video() { Title = "hello"};
 
-            encoder encoder = new encoder();
-            encoder.enco(vidd);
+            VideoEncoder encoder = new VideoEncoder();
+            MailService mailService = new MailService();
+            encoder.VideoEncoded += mailService.sendmail;
+            TextMessage textMessage = new TextMessage();
+            encoder.VideoEncoded += textMessage.sendingsms;
+
+            encoder.Encode(video);
         }
 
      

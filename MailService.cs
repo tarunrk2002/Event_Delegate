@@ -8,9 +8,9 @@ namespace events_delegates
 {
     internal class MailService
     {
-        public void OnVideoEncoded()
+        public void sendmail(object source,EventArgs e) 
         {
-            Console.WriteLine("sending the mail");
+            Console.WriteLine("mail sent...");
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace events_delegates
 {
-    internal class vid
+    internal class Video
     {
         public string Title { get; set; }
     }

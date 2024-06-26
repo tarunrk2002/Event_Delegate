@@ -14,10 +14,18 @@ namespace events_delegates
             Video video = new Video() { Title = "hello"};
 
             VideoEncoder encoder = new VideoEncoder();
+
+
             MailService mailService = new MailService();
             encoder.VideoEncoded += mailService.sendmail;
+
+
             TextMessage textMessage = new TextMessage();
             encoder.VideoEncoded += textMessage.sendingsms;
+
+
+            sendingvoicenote svn = new sendingvoicenote();
+            encoder.VideoEncoded += svn.voicenote;
 
             encoder.Encode(video);
         }

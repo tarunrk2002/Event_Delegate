@@ -27,6 +27,12 @@ namespace events_delegates
             sendingvoicenote svn = new sendingvoicenote();
             encoder.VideoEncoded += svn.voicenote;
 
+            newevent newevent = new newevent();
+           
+            newevent.AfterCleaning += mailService.sendmail;
+
+
+            newevent.cleaning();
             encoder.Encode(video);
         }
 
